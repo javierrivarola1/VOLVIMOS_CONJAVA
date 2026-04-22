@@ -19,25 +19,27 @@ public class Java_class_if_02 {
         
         System.out.println("Por favor dame un numero para el mes: ");
          mes = Utils.leerInt();
-
-   if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
-        dias = 31;
-    } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
-        dias = 30;
-    } else if (mes == 2) {
-        
-        System.out.print("Ingrese el año: ");
-        anio = Utils.leerInt();
-
-       
-        if ((anio % 4 == 0) && ((anio % 100 != 0) || (anio % 400 == 0))) {
-            dias = 29; // Es bisiesto
+         
+         if (mes==2) {
+             
+             System.out.println("Por favor dame numero de anio: ");
+             anio=Utils.leerInt();
+             
+             if (((anio % 4 == 0) && ((anio % 100 != 0) || (anio % 400 == 0)))) {
+                 dias = 29;
+             } else { dias = 28; }
+            
         } else {
-            dias = 28; 
-        }
-    } else {
-        System.out.println("Mes no válido.");
-            }
+         
+             switch(mes){
+             
+                 case 1: case 3: case 5: case 7: case 8: case 10: case 12: dias = 31; break;
+                 case 2: case 4: case 6: case 9: case 11: dias = 30;break;
+                 default: System.out.println("Pusiste un numero incorrecto ");  
+             
+             }
+         
+         }
 
     
     System.out.println("El mes " + mes + " tiene " + dias + " días.");
