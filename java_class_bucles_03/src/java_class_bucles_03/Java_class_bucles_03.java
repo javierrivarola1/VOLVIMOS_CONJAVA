@@ -19,7 +19,7 @@ public class Java_class_bucles_03 {
         numeroIng = Utils.leerInt();
         
      while((numeroIng >=1) && (numeroIng <=10)){
-         suma = numeroIng+numeroIng;
+         suma = suma+numeroIng;
      
         System.out.println("Excelente, dame otro numero entre el 1 y el 10 ");
         numeroIng = Utils.leerInt();
